@@ -1,0 +1,156 @@
+:root {
+  --accent:#b77d41;      /* soft golden-brown accent */
+  --accent-light:#e5c7a0; /* lighter variant for hover/backgrounds */
+  --bg:#f9f5f0;          /* off-white beige background */
+  --text:#2b2b2b;        /* dark text color */
+  --muted:#6b5e50;       /* secondary muted text */
+  --card-bg:#fff8f2;     /* light card background */
+}
+
+* { box-sizing:border-box; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--card-bg);
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  border-bottom: 3px solid var(--accent);
+}
+.site-header .container {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:1rem;
+}
+.brand {
+  font-weight:700;
+  color: var(--accent);
+  letter-spacing:1px;
+}
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+  background: var(--card-bg);
+  padding: 2rem;
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.05);
+  text-align: center;
+}
+.hero h2 {
+  color: var(--accent);
+}
+.hero p {
+  max-width: 600px;
+  margin: 0.5rem auto 1rem;
+}
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+.btn:hover {
+  background: var(--accent-light);
+  color: #3a2b1c;
+}
+
+/* ---------- Sections ---------- */
+section {
+  margin-bottom: 2rem;
+}
+.about, .contact {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+/* ---------- Product Grid ---------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,.05);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+}
+.card h4 {
+  color: var(--accent);
+  margin: 0.4rem 0;
+}
+.card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ---------- Product Detail ---------- */
+.product-detail {
+  display: grid;
+  gap: 1.5rem;
+}
+@media(min-width:800px){
+  .product-detail { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- Contact Form ---------- */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 500px;
+}
+input, textarea {
+  padding: 0.6rem;
+  border: 1px solid #d6c7b2;
+  border-radius: 8px;
+  background: #fff;
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 4px var(--accent-light);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 1rem 0;
+  background: var(--card-bg);
+  border-top: 2px solid var(--accent);
+  margin-top: 2rem;
+}
